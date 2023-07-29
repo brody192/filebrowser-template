@@ -18,7 +18,7 @@ if [ -z "$WEB_PASSWORD" ]; then
     exit 1
 fi
 
-rm -rf $RAILWAY_VOLUME_MOUNT_PATH/LOST+FOUND > /dev/null
+rm -rf $RAILWAY_VOLUME_MOUNT_PATH/lost+found > /dev/null
 
 FILEBROWSER_DATA_PATH=$RAILWAY_VOLUME_MOUNT_PATH/.filebrowser_data
 

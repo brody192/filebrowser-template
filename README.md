@@ -2,12 +2,21 @@
 
 # 📂 Web File Browser
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/Nan7Bs?referralCode=ySCnWl)
+
 Filebrowser provides a file managing interface within the attached volume and it can be used to upload, delete, preview, rename and edit your files.
 
-## Features
+## FileBrowser Features
+
+- Upload, Delete, Rename and Create Files and Folders
+- Preview, Edit and Share Files
+
+## Template Features
 
 - Run any Filebrowser version by setting the `FILEBROWSER_VERSION` variable
+
 - Automatically uses attached volume as storage location
+
 - Username & Password is set by service variables
 
 ### Caveats
