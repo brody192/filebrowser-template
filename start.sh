@@ -18,8 +18,6 @@ if [ -z "$WEB_PASSWORD" ]; then
     exit 1
 fi
 
-# rm -rf $RAILWAY_VOLUME_MOUNT_PATH/lost+found > /dev/null
-
 FILEBROWSER_DATA_PATH=$RAILWAY_VOLUME_MOUNT_PATH/appdata/filebrowser_data
 
 DATABASE_PATH=$FILEBROWSER_DATA_PATH/filebrowser.db
