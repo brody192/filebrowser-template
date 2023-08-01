@@ -4,22 +4,22 @@
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/Nan7Bs?referralCode=ySCnWl)
 
-Filebrowser provides a file managing interface within the attached volume and it can be used to upload, delete, preview, rename and edit your files.
+Filebrowser provides a file managing interface within the attached volume and it can be used to upload, delete, preview, rename, and edit your files.
 
 ## FileBrowser Features
 
-- Upload, Delete, Rename and Create Files and Folders
+- Upload, Delete, Rename, and Create Files and Folders
 - Preview, Edit and Share Files
 
 ## Template Features
 
 - Run any Filebrowser version by setting the `FILEBROWSER_VERSION` variable
 
-- Automatically uses attached volume as storage location
+- Automatically uses attached volume as the storage location
 
-- Username & Password is set by service variables
+- Username and Password are set by service variables
 
-- By default the storage location set to a `storage` subdirectory in the root of the volume, but by setting a service `USE_VOLUME_ROOT` to `1` you can opt to use the root of the volume as the storage location instead
+- By default, the storage location is set to a `storage` subdirectory in the root of the volume, but by setting a service `USE_VOLUME_ROOT` to `1` you can opt to use the root of the volume as the storage location instead
 
 ### Caveats
 
