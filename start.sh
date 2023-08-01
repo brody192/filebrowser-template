@@ -24,7 +24,12 @@ DATABASE_PATH=$FILEBROWSER_DATA_PATH/filebrowser.db
 
 FILEBROWSER_USERNAME_PATH=$FILEBROWSER_DATA_PATH/username
 
-FILEBROWSER_STORAGE_PATH=$RAILWAY_VOLUME_MOUNT_PATH/storage
+if [ "$USE_VOLUME_ROOT" == "1" ]; then
+    echo using volume root as storage location
+    FILEBROWSER_STORAGE_PATH=$RAILWAY_VOLUME_MOUNT_PATH
+else
+    FILEBROWSER_STORAGE_PATH=$RAILWAY_VOLUME_MOUNT_PATH/storage
+fi
 
 if [ -f "$DATABASE_PATH" ]; then
     if [ -f "$FILEBROWSER_USERNAME_PATH" ]; then
@@ -43,7 +48,6 @@ else
 
     echo setting configurations
     ./filebrowser config set --address "0.0.0.0" --database $DATABASE_PATH > /dev/null
-    ./filebrowser config set --root $FILEBROWSER_STORAGE_PATH --database $DATABASE_PATH > /dev/null
 
     ./filebrowser users add $WEB_USERNAME $WEB_PASSWORD --database $DATABASE_PATH > /dev/null
 fi
@@ -53,5 +57,6 @@ echo $WEB_USERNAME > $FILEBROWSER_USERNAME_PATH
 ./filebrowser users update $WEB_USERNAME --password $WEB_PASSWORD --database $DATABASE_PATH > /dev/null
 
 ./filebrowser config set --port $PORT --database $DATABASE_PATH > /dev/null
+./filebrowser config set --root $FILEBROWSER_STORAGE_PATH --database $DATABASE_PATH > /dev/null
 
 ./filebrowser version && ./filebrowser --database $DATABASE_PATH 2>&1
