@@ -48,7 +48,6 @@ else
 
     echo setting configurations
     ./filebrowser config set --address "0.0.0.0" --database $DATABASE_PATH > /dev/null
-    ./filebrowser config set --root $FILEBROWSER_STORAGE_PATH --database $DATABASE_PATH > /dev/null
 
     ./filebrowser users add $WEB_USERNAME $WEB_PASSWORD --database $DATABASE_PATH > /dev/null
 fi
@@ -58,5 +57,6 @@ echo $WEB_USERNAME > $FILEBROWSER_USERNAME_PATH
 ./filebrowser users update $WEB_USERNAME --password $WEB_PASSWORD --database $DATABASE_PATH > /dev/null
 
 ./filebrowser config set --port $PORT --database $DATABASE_PATH > /dev/null
+./filebrowser config set --root $FILEBROWSER_STORAGE_PATH --database $DATABASE_PATH > /dev/null
 
 ./filebrowser version && ./filebrowser --database $DATABASE_PATH 2>&1
