@@ -19,6 +19,8 @@ Filebrowser provides a file managing interface within the attached volume and it
 
 - Username & Password is set by service variables
 
+- By default the storage location set to a `storage` subdirectory in the root of the volume, but by setting a service `USE_VOLUME_ROOT` to `1` you can opt to use the root of the volume as the storage location instead
+
 ### Caveats
 
 - Setting a password in Filebrowser's settings will not persist across deployments, this is because the password from the `WEB_PASSWORD` variable is used instead on every deployment, in order to keep the login password in sync with what is set in the variable
