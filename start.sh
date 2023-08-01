@@ -24,7 +24,7 @@ DATABASE_PATH=$FILEBROWSER_DATA_PATH/filebrowser.db
 
 FILEBROWSER_USERNAME_PATH=$FILEBROWSER_DATA_PATH/username
 
-if [ -n "$USE_VOLUME_ROOT" ]; then
+if [ "$USE_VOLUME_ROOT" == "1" ]; then
     echo using volume root as storage location
     FILEBROWSER_STORAGE_PATH=$RAILWAY_VOLUME_MOUNT_PATH
 else
