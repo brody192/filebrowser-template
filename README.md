@@ -19,7 +19,7 @@ Filebrowser provides a file managing interface within the attached volume and it
 
 - Username and Password are set by service variables
 
-- By default, the storage location is set to a `storage` subdirectory in the root of the volume, but by setting a service `USE_VOLUME_ROOT` to `1` you can opt to use the root of the volume as the storage location instead
+- By default, the storage location is set to the `storage` subdirectory in the root of the volume, but by setting a service variable `USE_VOLUME_ROOT` to `1` you can opt to use the root of the volume as the storage location instead
 
 ### Caveats
 
