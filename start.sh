@@ -37,26 +37,26 @@ if [ -f "$DATABASE_PATH" ]; then
 
         if [[ -n "$FILEBROWSER_CURRENT_USERNAME" && "$FILEBROWSER_CURRENT_USERNAME" != "$WEB_USERNAME" ]]; then
             echo new username was set in the service variables, changing username: $FILEBROWSER_CURRENT_USERNAME "->" $WEB_USERNAME
-            ./filebrowser users update $FILEBROWSER_CURRENT_USERNAME --username $WEB_USERNAME --database $DATABASE_PATH > /dev/null
+            filebrowser users update $FILEBROWSER_CURRENT_USERNAME --username $WEB_USERNAME --database $DATABASE_PATH > /dev/null
             echo $WEB_USERNAME >| $FILEBROWSER_USERNAME_PATH
             echo username updated
         fi
     fi
 else
     echo first start, creating database
-    ./filebrowser config init --database $DATABASE_PATH > /dev/null
+    filebrowser config init --database $DATABASE_PATH > /dev/null
 
     echo setting configurations
-    ./filebrowser config set --address "0.0.0.0" --database $DATABASE_PATH > /dev/null
+    filebrowser config set --address "0.0.0.0" --database $DATABASE_PATH > /dev/null
 
-    ./filebrowser users add $WEB_USERNAME $WEB_PASSWORD --database $DATABASE_PATH > /dev/null
+    filebrowser users add $WEB_USERNAME $WEB_PASSWORD --database $DATABASE_PATH > /dev/null
 fi
 
 echo $WEB_USERNAME > $FILEBROWSER_USERNAME_PATH
 
-./filebrowser users update $WEB_USERNAME --password $WEB_PASSWORD --database $DATABASE_PATH > /dev/null
+filebrowser users update $WEB_USERNAME --password $WEB_PASSWORD --database $DATABASE_PATH > /dev/null
 
-./filebrowser config set --port $PORT --database $DATABASE_PATH > /dev/null
-./filebrowser config set --root $FILEBROWSER_STORAGE_PATH --database $DATABASE_PATH > /dev/null
+filebrowser config set --port $PORT --database $DATABASE_PATH > /dev/null
+filebrowser config set --root $FILEBROWSER_STORAGE_PATH --database $DATABASE_PATH > /dev/null
 
-./filebrowser version && ./filebrowser --database $DATABASE_PATH 2>&1
+filebrowser version && filebrowser --database $DATABASE_PATH 2>&1
