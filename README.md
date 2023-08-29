@@ -13,8 +13,6 @@ Filebrowser provides a file managing interface within the attached volume and it
 
 ## Template Features
 
-- Run any Filebrowser version by setting the `FILEBROWSER_VERSION` variable
-
 - Automatically uses attached volume as the storage location
 
 - Username and Password are set by service variables
