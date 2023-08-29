@@ -1,27 +1,9 @@
-# FROM alpine:3.18.3 as base
+FROM alpine:3.18.3
 
-# FROM base as download
-
-# WORKDIR /download
-
-# RUN apk add --no-cache wget
-
-# ARG FILEBROWSER_VERSION=2.24.2
-
-# RUN wget -nv https://github.com/filebrowser/filebrowser/releases/download/v${FILEBROWSER_VERSION}/linux-amd64-filebrowser.tar.gz \
-#     && tar -zxvf linux-amd64-filebrowser.tar.gz filebrowser \
-#     && chmod +x filebrowser
-
-# FROM base as runner
-
-# WORKDIR /app
-
-# COPY --from=download /download/filebrowser /usr/bin/
-
-FROM filebrowser/filebrowser:v2.24.2
+COPY --from=filebrowser/filebrowser:v2.24.2 filebrowser /usr/bin/
 
 COPY --chmod=755 start.sh ./
 
-ENTRYPOINT ["start.sh"]
+ENTRYPOINT ["/bin/sh"]
 
-# CMD ["sh", "start.sh"]
+CMD ["start.sh"]
