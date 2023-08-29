@@ -5,17 +5,17 @@ set -e
 if [ -z "$RAILWAY_VOLUME_MOUNT_PATH" ]; then
     echo no volume attached, please attach a volume.
     echo upon attaching a volume let this service rebuild
-    exit 1
+    exit 0
 fi
 
 if [ -z "$WEB_USERNAME" ]; then
     echo missing the WEB_USERNAME variable, please add it to continue
-    exit 1
+    exit 0
 fi
 
 if [ -z "$WEB_PASSWORD" ]; then
     echo missing the WEB_PASSWORD variable, please add it to continue
-    exit 1
+    exit 0
 fi
 
 FILEBROWSER_DATA_PATH=$RAILWAY_VOLUME_MOUNT_PATH/appdata/filebrowser_data
