@@ -1,6 +1,6 @@
 FROM alpine:3.18.3
 
-COPY --from=filebrowser/filebrowser:v2.25.0 filebrowser /usr/bin/
+COPY --from=filebrowser/filebrowser:latest filebrowser /usr/bin/
 
 COPY --chmod=755 start.sh ./
 
